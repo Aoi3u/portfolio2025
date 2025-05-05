@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 
-export default function ProjectsSection() {
+export default function Projects() {
   return (
     <section
       id="projects"

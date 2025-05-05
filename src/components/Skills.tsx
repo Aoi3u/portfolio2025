@@ -1,4 +1,4 @@
-export default function SkillsSection() {
+export default function Skills() {
   const skills = [
     { name: "JavaScript", percentage: 40 },
     { name: "TypeScript", percentage: 35 },
