@@ -4,9 +4,7 @@ import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
 
 type Props = {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
@@ -16,7 +14,8 @@ export function generateStaticParams() {
 }
 
 export default async function ProjectPage({ params }: Props) {
-  const { slug } = await params;
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
 
   const project = projects.find((p) => p.slug === slug);
 
