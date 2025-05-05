@@ -2,9 +2,10 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 15, 23, 42; /* slate-950 */
-  --background-mid-rgb: 23, 37, 84; /* blue-950 */
-  --background-end-rgb: 15, 23, 42; /* slate-950 */
+  --background-start-rgb: 10, 15, 30;
+  --background-mid-rgb: 17, 25, 60;
+  --background-end-rgb: 10, 15, 30;
+  --accent-color: 99, 179, 237;
 }
 
 body {
@@ -17,14 +18,40 @@ body {
     rgb(var(--background-mid-rgb)),
     rgb(var(--background-end-rgb))
   );
+  line-height: 1.6;
 }
 
 .header,
 .footer {
-  background-color: rgb(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background-color: rgba(10, 15, 30, 0.7);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.cyan-grad {
-  background: linear-gradient(to right, #89faeb, #03bafc);
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: none;
+}
+
+.section-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.section-card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.accent-text {
+  color: rgb(var(--accent-color));
+}
+
+.accent-gradient {
+  background: linear-gradient(to right, rgb(99, 179, 237), rgb(59, 130, 246));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

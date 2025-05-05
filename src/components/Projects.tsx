@@ -16,7 +16,7 @@ export default function ProjectsSection() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105"
+            className="section-card overflow-hidden transition-all duration-300 hover:transform hover:scale-102 hover:shadow-lg hover:shadow-blue-500/5"
           >
             <Link href={`/projects/${project.slug}`}>
               <div className="w-full aspect-video relative">
@@ -37,13 +37,28 @@ export default function ProjectsSection() {
                   {project.title}
                 </Link>
               </h3>
-              <p className="text-blue-200 text-sm">{project.description}</p>
+              <p className="text-blue-200/90 text-sm">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {project.technologies.slice(0, 3).map((tech, i) => (
+                  <span
+                    key={i}
+                    className="text-xs px-2 py-1 bg-blue-900/20 text-blue-300/90 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+                {project.technologies.length > 3 && (
+                  <span className="text-xs px-2 py-1 bg-blue-900/20 text-blue-300/90 rounded-full">
+                    +{project.technologies.length - 3}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
         ))}
 
-        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-12 flex items-center justify-center transition-all duration-300 hover:transform hover:scale-105">
-          <p className="text-xl text-blue-300 font-medium">Coming soon...</p>
+        <div className="section-card p-10 flex items-center justify-center transition-all duration-300 hover:transform hover:scale-102">
+          <p className="text-xl text-blue-300/90 font-medium">Coming soon...</p>
         </div>
       </div>
     </section>
