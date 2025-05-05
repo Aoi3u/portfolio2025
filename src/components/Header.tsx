@@ -109,7 +109,7 @@ export default function Header() {
         >
           <nav>
             <ul className="flex flex-col space-y-8 text-center">
-              {["about", "projects", "skills", "contact"].map((item) => (
+              {["about", "projects", "skills"].map((item) => (
                 <li key={item}>
                   <Link
                     href={`/#${item}`}
