@@ -1,57 +1,70 @@
 @import "tailwindcss";
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 10, 15, 30;
-  --background-mid-rgb: 17, 25, 60;
-  --background-end-rgb: 10, 15, 30;
-  --accent-color: 99, 179, 237;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 10, 15, 30;
+    --background-mid-rgb: 17, 25, 60;
+    --background-end-rgb: 10, 15, 30;
+    --accent-color: 99, 179, 237;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: linear-gradient(
-    to right,
-    rgb(var(--background-start-rgb)),
-    rgb(var(--background-mid-rgb)),
-    rgb(var(--background-end-rgb))
-  );
-  line-height: 1.6;
+    color: rgb(var(--foreground-rgb));
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(
+        to right,
+        rgb(var(--background-start-rgb)),
+        rgb(var(--background-mid-rgb)),
+        rgb(var(--background-end-rgb))
+    );
+    line-height: 1.6;
 }
 
 .header,
 .footer {
-  background-color: rgba(10, 15, 30, 0.7);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(10, 15, 30, 0.7);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: none;
 }
 
 .section-card {
-  background-color: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
 }
 
 .section-card:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .accent-text {
-  color: rgb(var(--accent-color));
+    color: rgb(var(--accent-color));
 }
 
 .accent-gradient {
-  background: linear-gradient(to right, rgb(99, 179, 237), rgb(59, 130, 246));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    background: linear-gradient(to right, rgb(99, 179, 237), rgb(59, 130, 246));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
 }
